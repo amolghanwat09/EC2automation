@@ -1,0 +1,18 @@
+---
+
+- name : "Read ENV variable"
+  include_vars : 
+    file : "vars/{{ PROJECT }}_{{ ENV }}.yml"
+
+- name : "Spin new ec2 instance"
+  ec2 :
+    region : "{{ REGION }}"
+    key_name : "{{ KEYNAME }}"
+    instance_type : t2.micro
+    image : "{{ AMIID }}"
+    wait : yes
+    group :
+     - "{{ SGNAME }}"
+    count : "{{ COUNT }}"
+    vpc_subnet_id : "{{ SUBNETID }}"
+    #    assign_public_ip : yes 

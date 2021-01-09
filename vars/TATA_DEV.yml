@@ -1,0 +1,6 @@
+KEYNAME : Key-NV
+REGION : us-east-1
+AZ : us-east-1a
+SUBNETID : subnet-0b8fdea1fea535caf
+SGNAME : "PubSG"
+AMIID : ami-0be2609ba883822ec
